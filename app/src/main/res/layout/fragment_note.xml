@@ -5,6 +5,14 @@
 
     <data>
 
+        <variable
+            name="noteViewModel"
+            type="com.example.notesappwithnavgraph.viewmodel.NotesViewModel" />
+
+        <variable
+            name="navController"
+            type="androidx.navigation.NavController" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,6 +27,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:clickable="true"
+            android:onClick="@{() -> noteViewModel.onClickSubmitButton(navController)}"
             android:src="@drawable/ic_add_black_24dp"
             app:backgroundTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,6 +43,7 @@
             android:layout_marginTop="1dp"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="1dp"
+
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
